@@ -12,7 +12,7 @@ public class ScreenWrap : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        ScreenSize();
+        GetScreenSize();
         CreateGhosts();
     }
 
@@ -22,7 +22,7 @@ public class ScreenWrap : MonoBehaviour {
         Swap();        
     }
 
-    void ScreenSize()
+    void GetScreenSize()
     {
         Camera cam = Camera.main;
 

@@ -31,8 +31,7 @@ public class AsteroidBigController : MonoBehaviour {
         rigid = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         sceneCon = GetComponentInParent<GameSceneController>();
-
-
+        
 
         if (sprite1 != null)
         {
@@ -44,11 +43,11 @@ public class AsteroidBigController : MonoBehaviour {
         }
         if (sprite3 != null)
         {
-            sprites[2] = sprite1;
+            sprites[2] = sprite3;
         }
         if (sprite4 != null)
         {
-            sprites[3] = sprite2;
+            sprites[3] = sprite4;
         }
 
 
@@ -74,11 +73,10 @@ public class AsteroidBigController : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
-    {
+    {        
         GameObject laser = collider.gameObject;
         if(laser.GetComponent<bulletController>() != null)
-        {
-            
+        {            
             Instantiate(medAsteroidPrefab, transform.position, Quaternion.identity, sceneCon.transform);
             Instantiate(medAsteroidPrefab, transform.position, Quaternion.identity, sceneCon.transform);
             sceneCon.AddScore(10);
